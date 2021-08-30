@@ -12,7 +12,7 @@ export class Triangle extends React.PureComponent<Props> {
 
     static defaultProps: Pick<Props, "size" | "color" | "direction"> = {
         size: 8,
-        color: "#FFFF",
+        color: "#000000",
         direction: "down",
     };
 
@@ -27,7 +27,7 @@ export class Triangle extends React.PureComponent<Props> {
         const borderStyle = {
             borderLeftWidth: size,
             borderRightWidth: size,
-            borderBottomWidth: size * 1.3,
+            borderBottomWidth: size * 1.5,
             borderBottomColor: color,
             transform: [
                 {

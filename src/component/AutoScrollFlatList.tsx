@@ -208,11 +208,13 @@ export class AutoScrollFlatList<T> extends React.PureComponent<Props<T>, State> 
     private renderDefaultNewItemAlertComponent = (newItemCount: number, translateY: Animated.Value) => {
         const {inverted, horizontal, newItemAlertMessage, newItemAlertContainerStyle, newItemAlertTextStyle} = this.props;
         const direction = this.getTriangleDirection();
-        const message = newItemAlertMessage ? newItemAlertMessage(newItemCount) : `${direction === "left" ? " " : ""}${newItemCount} Nuevo mensaje${newItemCount > 1 ? "s" : ""}`;
+        const message = newItemAlertMessage ? newItemAlertMessage(newItemCount) : `${direction === "left" ? " " : ""}${newItemCount} new item${newItemCount > 1 ? "s" : ""}`;
         const position = inverted && !horizontal ? {bottom: translateY} : {top: translateY};
         return (
             <Animated.View style={[styles.newItemAlert, newItemAlertContainerStyle, position]}>
+                {direction === "left" && <Triangle size={4} direction={direction} />}
                 <Text style={[styles.alertMessage, newItemAlertTextStyle]}>{message}</Text>
+                {direction !== "left" && <Triangle size={4} direction={direction} />}
             </Animated.View>
         );
     };
@@ -239,28 +241,28 @@ const styles = StyleSheet.create({
     },
     scrollToEndIndicator: {
         position: "absolute",
-        width: 45,
-        height: 45,
+        width: 30,
+        height: 30,
         justifyContent: "center",
         alignItems: "center",
-        borderRadius: 100,
-        padding: 12,
-        backgroundColor: "rgba(0, 41, 69, 0.9)",
+        borderWidth: 1,
+        borderColor: "#000000",
+        borderRadius: 5,
+        backgroundColor: "#ffffff",
     },
     newItemAlert: {
-        padding: 12,
         position: "absolute",
-        elevation: 2,
         alignSelf: "center",
-        marginTop: 23,
-        alignItems: "center",
-        borderRadius: 7.5,
         flexDirection: "row",
-        backgroundColor: "rgba(0, 41, 69, 0.9)",
+        alignItems: "center",
+        borderRadius: 10,
+        borderWidth: StyleSheet.hairlineWidth,
+        borderColor: "#000000",
+        backgroundColor: "#ffffff",
+        paddingVertical: 3,
+        paddingHorizontal: 8,
     },
     alertMessage: {
-        color: "#FFFFFF",
-        fontSize: 18,
         marginRight: 4,
     },
 });
