@@ -12,7 +12,7 @@ export class Triangle extends React.PureComponent {
         const borderStyle = {
             borderLeftWidth: size,
             borderRightWidth: size,
-            borderBottomWidth: size * 1.5,
+            borderBottomWidth: size * 1.3,
             borderBottomColor: color,
             transform: [
                 {
@@ -26,7 +26,7 @@ export class Triangle extends React.PureComponent {
 Triangle.displayName = "Triangle";
 Triangle.defaultProps = {
     size: 8,
-    color: "#000000",
+    color: "#FFFF",
     direction: "down",
 };
 const styles = StyleSheet.create({
