@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         borderRadius: 100,
         padding: 12,
-        backgroundColor: "rgba(0, 41, 69, 0.9)",
+        backgroundColor: "rgba(12,49,49, 0.9)",
     },
     newItemAlert: {
         padding: 12,
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         borderRadius: 7.5,
         flexDirection: "row",
-        backgroundColor: "rgba(0, 41, 69, 0.9)",
+        backgroundColor: "rgba(12,49,49, 0.9)",
     },
     alertMessage: {
         color: "#FFFFFF",
